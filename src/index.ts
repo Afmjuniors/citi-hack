@@ -1,8 +1,6 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import { userRouter } from './routers/userRouter'
-import { postRouter } from './routers/postRouter'
 
 dotenv.config()
 
@@ -16,7 +14,9 @@ app.listen(Number(process.env.PORT), () => {
 })
 
 
-
-app.use("/users", userRouter)
-app.use("/posts", postRouter)
+app.get("/",(res:Response, req:Request)=>{
+    res.send("Esta rodando")
+})
+// app.use("/users", userRouter)
+// app.use("/posts", postRouter)
 
