@@ -31,6 +31,7 @@ export interface DadosComVencimento{
     "TIPO_DE_REGISTRO": string,
     "NUMERO_SEQUENCIAL_DO_REGISTRO": string
 }
+
 export interface Trailer{
     "TIPO_DE_REGISTRO": string,
     "VALOR": string,
