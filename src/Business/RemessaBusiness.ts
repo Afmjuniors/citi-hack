@@ -60,14 +60,14 @@ export class RemessaBusiness {
             ContentType: json.mimetype
           }))
 
-          const url = await getSignedUrl(s3, new GetObjectCommand({
-            Bucket: bucketName,
-            Key: jsonID
-          }), { expiresIn: 120 })
+        //   const url = await getSignedUrl(s3, new GetObjectCommand({
+        //     Bucket: bucketName,
+        //     Key: jsonID
+        //   }), { expiresIn: 120 })
 
         return {
             quantidade:data.length,
-            message: url
+            message: "url"
         }
     }
 
