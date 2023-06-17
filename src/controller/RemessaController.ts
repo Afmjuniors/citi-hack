@@ -1,22 +1,23 @@
 import { Request, Response } from "express"
-import { RemessaBuniness } from "../Business/RemessaBusiness"
+import { RemessaBusiness } from "../Business/RemessaBusiness"
+import { BadRequestError } from "../error/BadRequestError"
 import { BaseError } from "../error/BaseError"
+import { s3 } from "../s3"
 
 
 
 export class RemessaController{
     constructor (
-        private remessaBusiness: RemessaBuniness
+        private remessaBusiness: RemessaBusiness
     ){}
     public postJsonRemessa =  async (req: Request, res: Response) => {
         try {
-            const file = req.file
-            if(file==undefined){
-                throw new Error("erro")
+            const json = req.file
+            if(json==undefined){
+                throw new BadRequestError("Arquivo de remessa vazio")
             }
-            const json = file.buffer.toString()
+            
             const output = await this.remessaBusiness.autenticarRemessa(json)
-
             res.status(200).send(output)
         } catch (error) {
             console.log(error)
@@ -27,5 +28,6 @@ export class RemessaController{
                 res.status(500).send("Erro inesperado")
             }
         }
-    }
+   
+}
 }
