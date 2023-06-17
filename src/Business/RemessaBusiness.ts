@@ -2,8 +2,9 @@
 
 export class RemessaBuniness {
 
-    public autenticarRemessa = async (json: any): Promise<{ message: string }> => {
-        console.log(json)
+    public autenticarRemessa = async (json: string): Promise<{ message: string }> => {
+        console.log(JSON.parse(json))
+        const data: {}[] = JSON.parse(json).data
 
 
 
