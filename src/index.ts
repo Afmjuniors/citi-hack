@@ -11,8 +11,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.listen(9001, () => {
-    console.log(`Servidor rodando na porta ${9001}`)
+app.listen(Number(process.env.PORT), () => {
+    console.log(`Servidor rodando na porta ${Number(process.env.PORT)}`)
 })
 
 app.get("/api/test", async (req: Request, res: Response) => {
@@ -31,5 +31,5 @@ app.get("/api/test", async (req: Request, res: Response) => {
     }
 })
 
-app.use("/remessa", remessaRouter)
+app.use("/api/v1/remessa", remessaRouter)
 
