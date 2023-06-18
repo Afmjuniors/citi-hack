@@ -102,7 +102,7 @@ export class RemessaBusiness {
         //   }), { expiresIn: 120 })
 
         return {
-            message: JSON.parse(json.buffer.toString())
+            message:jsonID
         }
     }
 
