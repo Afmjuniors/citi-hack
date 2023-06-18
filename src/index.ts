@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import { remessaRouter } from './routers/RemessaRoute'
 import { BaseError } from './error/BaseError'
+import { historyRouter } from './routers/HistoryRoute'
 
 dotenv.config()
 
@@ -32,4 +33,6 @@ app.get("/api/test", async (req: Request, res: Response) => {
 })
 
 app.use("/api/v1/remessa", remessaRouter)
+
+app.use("/api/v1/history", historyRouter)
 
