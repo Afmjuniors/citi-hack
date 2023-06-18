@@ -3,7 +3,8 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-export const bucketName = process.env.AWS_S3_BUCKET_NAME as string
+export const bucketName = "citi-qr-code"
+export const bucketNameRetorno ="citi-qr-response"
 
 export const s3 = new S3Client({
   region: process.env.AWS_S3_BUCKET_REGION as string,

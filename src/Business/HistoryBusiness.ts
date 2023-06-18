@@ -14,7 +14,7 @@ export class HistoryBusiness{
 
     }
     public urlHistoryByID =async (id:string):Promise<{url:string}>=> {
-             const url = await getSignedUrl(s3, new GetObjectCommand({
+            const url = await getSignedUrl(s3, new GetObjectCommand({
             Bucket: bucketName,
             Key: id
           }), { expiresIn: 120 })
