@@ -231,7 +231,7 @@ export class RemessaDTO {
         IDENTIFICADOR: unknown,
         LISTA:{
             NOME:string,
-            VALOR:number
+            VALOR:string
         }[],
         NUMERO_SEQUENCIAL:unknown
     ):RegistroDetalheInfoAdi=>{
